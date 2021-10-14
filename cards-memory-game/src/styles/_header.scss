@@ -1,0 +1,12 @@
+.header {
+  height: 100px;
+  width: 100%;
+  box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+  background-color: rgba(18,222,229,.15);
+  backdrop-filter: blur(9px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
