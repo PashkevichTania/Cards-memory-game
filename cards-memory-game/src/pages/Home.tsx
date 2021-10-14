@@ -1,11 +1,13 @@
 import React from 'react';
 import Header from "components/header/Header";
 import CardsContainer from "components/Cards/CardsContainer";
+import Timer from "components/timer/Timer";
 
 const Home = () => {
     return (
         <main>
             <Header />
+            <Timer />
             <CardsContainer />
         </main>
     );
