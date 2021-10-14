@@ -1,0 +1,12 @@
+.Timer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  .doubleDot{
+    padding: 0 5px;
+  }
+}

@@ -14,7 +14,7 @@ const CardsContainer = () => {
     }
 
     return (
-        <div>
+        <div className={"CardsContainer"}>
             <button onClick={startGameHandler}>start game</button>
             <button onClick={finishGameHandler}>finish game</button>
         </div>

@@ -5,7 +5,7 @@ import Timer from "components/timer/Timer";
 
 const Home = () => {
     return (
-        <main>
+        <main className={"Home"}>
             <Header />
             <Timer />
             <CardsContainer />

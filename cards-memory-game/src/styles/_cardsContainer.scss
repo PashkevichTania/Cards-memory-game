@@ -1,0 +1,21 @@
+@import "variables";
+
+.CardsContainer{
+  z-index: 1;
+  position: relative;
+  margin: 30px auto;
+  padding: 30px;
+  width: 75%;
+  border-radius: 15px;
+  height: 720px;
+
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 30px;
+  justify-items: center;
+
+
+  //glass
+  @extend %glass;
+}
