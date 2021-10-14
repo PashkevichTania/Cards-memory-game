@@ -16,6 +16,17 @@
   justify-items: center;
 
 
-  //glass
+  //glass effect
   @extend %glass;
+
+  .Card{
+    .cardImage{
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+
+
 }
+
