@@ -14,9 +14,11 @@ export const appSlice = createSlice({
   reducers: {
     startGame: (state) => {
       state.gameState.isGameStarted = true
+      state.gameState.isGameFinished = false
     },
     finishGame: (state) => {
       state.gameState.isGameStarted = false
+      state.gameState.isGameFinished = true
     },
     setScore: (state,  action: PayloadAction<number>) => {
         state.score = action.payload

@@ -9,4 +9,42 @@
   align-items: center;
   justify-content: space-around;
   color: white;
+
+  .btns{
+    button{
+      z-index: 1;
+      outline: none;
+      border: none;
+      margin-right: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: white;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 19px;
+
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      text-transform: capitalize;
+
+
+    }
+    .start{
+      color: #79f679;
+      &:hover{
+        background: rgba(0, 255, 185, 0.15);
+      }
+    }
+    .finish{
+      color: #f35a5a;
+      &:hover{
+        background: rgba(255, 0, 0, 0.15);
+      }
+    }
+  }
 }
