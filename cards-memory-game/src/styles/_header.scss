@@ -39,11 +39,17 @@
       &:hover{
         background: rgba(0, 255, 185, 0.15);
       }
+      &:active{
+        background: rgba(0, 255, 185, 0.2);
+      }
     }
     .finish{
       color: #f35a5a;
       &:hover{
         background: rgba(255, 0, 0, 0.15);
+      }
+      &:active{
+        background: rgba(255, 0, 0, 0.2);
       }
     }
   }
