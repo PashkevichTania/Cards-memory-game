@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "components/header/Header";
+import Header from "components/Header/Header";
 import CardsContainer from "components/Cards/CardsContainer";
-import Timer from "components/timer/Timer";
+import Timer from "components/Timer/Timer";
 
 const Home = () => {
     return (
