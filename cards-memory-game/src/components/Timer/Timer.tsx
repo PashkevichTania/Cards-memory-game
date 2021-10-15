@@ -5,17 +5,17 @@ import {gameStateSelector} from "redux/selectors";
 const Timer = () => {
     const [seconds, setSeconds] = useState(0);
     const [minutes, setMinutes] = useState(0);
-    const gameState = useSelector(gameStateSelector)
+    const gameState = useSelector(gameStateSelector);
 
     useEffect(() => {
         let interval: number | undefined;
         if (gameState.isGameStarted) {
             interval = setInterval(() => {
                 if (seconds === 59){
-                    setMinutes(minutes => minutes +1);
+                    setMinutes(min => min +1);
                     setSeconds(0);
                 }else {
-                    setSeconds(seconds => seconds + 1);
+                    setSeconds(sec => sec + 1);
                 }
             }, 1000);
         } else if (gameState.isGameFinished) {
@@ -24,7 +24,7 @@ const Timer = () => {
             clearInterval(interval);
         }
         return () => clearInterval(interval);
-    }, [seconds]);
+    }, [gameState, seconds]);
 
 
 
