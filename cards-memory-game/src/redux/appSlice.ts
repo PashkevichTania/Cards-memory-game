@@ -27,6 +27,6 @@ export const appSlice = createSlice({
 })
 
 
-export const {startGame, finishGame} = appSlice.actions
+export const {startGame, finishGame, setScore} = appSlice.actions
 
 export default appSlice.reducer
