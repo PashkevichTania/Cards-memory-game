@@ -6,6 +6,7 @@ const initialState = {
     isGameFinished: false,
   },
   score: 0,
+  time: '',
 };
 
 export const appSlice = createSlice({
@@ -23,10 +24,13 @@ export const appSlice = createSlice({
     setScore: (state,  action: PayloadAction<number>) => {
         state.score = action.payload
     },
+    setTime: (state,  action: PayloadAction<string>) => {
+      state.time = action.payload
+    },
   },
 })
 
 
-export const {startGame, finishGame, setScore} = appSlice.actions
+export const {startGame, finishGame, setScore, setTime} = appSlice.actions
 
 export default appSlice.reducer

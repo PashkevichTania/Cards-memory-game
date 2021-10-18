@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {gameStateSelector} from "redux/selectors";
+import {setScore, setTime} from "redux/appSlice";
 
 const Timer = () => {
     const [seconds, setSeconds] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const gameState = useSelector(gameStateSelector);
+    const dispatch = useDispatch()
 
     useEffect(() => {
         let interval: number | undefined;
@@ -19,12 +21,15 @@ const Timer = () => {
                 }
             }, 1000);
         } else if (gameState.isGameFinished) {
+            const finalTime = (minutes * 60 + seconds);
+            dispatch(setTime(minutes+':'+seconds));
+            dispatch(setScore((8 * 100) - finalTime * 10));
             setMinutes(0);
             setSeconds(0);
             clearInterval(interval);
         }
         return () => clearInterval(interval);
-    }, [gameState, seconds]);
+    }, [gameState]);
 
 
 

@@ -1,8 +1,11 @@
 import React, {memo, useEffect, useRef} from 'react';
 import CardsList from "components/Cards/CardsList";
+import {useDispatch} from "react-redux";
+import {finishGame} from "redux/appSlice";
 
 const CardsContainer = () => {
 
+  const dispatch = useDispatch()
   let openCards = useRef<HTMLElement[]>([]);
   let correct = useRef<number>(0);
 
@@ -18,19 +21,20 @@ const CardsContainer = () => {
   const clickHandler = (event: any) => {
     if (event.target.classList.contains('cardImage')) {
       const card = event.target.offsetParent.offsetParent
-      console.log(card)
       if (!card.classList.contains('disabled')) {
         card.classList.add('active');
         openCards.current.push(card)
         if (openCards.current.length === 2) {
           if (openCards.current[0].dataset.img == openCards.current[1].dataset.img) {
             correctHandler()
+            if (correct.current=== 8){
+              dispatch(finishGame())
+            }
           } else {
             wrongHandler()
           }
         }
       }
-      console.log(openCards)
     }
   }
 
