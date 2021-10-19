@@ -21,7 +21,7 @@ const CardsContainer = () => {
   const clickHandler = (event: any) => {
     if (event.target.classList.contains('cardImage')) {
       const card = event.target.offsetParent.offsetParent
-      if (!card.classList.contains('disabled')) {
+      if (!card.classList.contains('active')) {
         card.classList.add('active');
         openCards.current.push(card)
         if (openCards.current.length === 2) {
