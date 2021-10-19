@@ -30,8 +30,8 @@ const Home = () => {
   const notify = () => toast(
     <div style={{display: "flex", flexDirection:"column" ,alignItems:"flex-end"}}>
       <p>🦄 Congrats you win!</p>
-      <p> Your time: {time}</p>
-      <p>Your score: {score}</p>
+      <p> Your time: <span style={{color:'#b81640'}}>{time}</span></p>
+      <p>Your score: <span style={{color:'#b81640'}}>{score}</span></p>
     </div>, {
     position: "top-center",
     autoClose: 10000,
