@@ -18,22 +18,23 @@ const CardsContainer = () => {
 
 
   const clickHandler = (event: any) => {
-    if (!disableRef.current){
-      if (event.target.classList.contains('cardImage')) {
-        const card = event.target.offsetParent.offsetParent
-        if (!card.classList.contains('active')) {
-          card.classList.add('active')
-          openCards.current.push(card)
-          if (openCards.current.length === 2) {
-            disableRef.current = true;
-            if (openCards.current[0].dataset.img == openCards.current[1].dataset.img) {
-              correctHandler()
-              if (correct.current=== 8){
-                dispatch(finishGame())
-              }
-            } else {
-              wrongHandler()
+    if (disableRef.current) {
+      return
+    }
+    if (event.target.classList.contains('cardImage')) {
+      const card = event.target.offsetParent.offsetParent
+      if (!card.classList.contains('active')) {
+        card.classList.add('active')
+        openCards.current.push(card)
+        if (openCards.current.length === 2) {
+          disableRef.current = true;
+          if (openCards.current[0].dataset.img == openCards.current[1].dataset.img) {
+            correctHandler()
+            if (correct.current === 8) {
+              dispatch(finishGame())
             }
+          } else {
+            wrongHandler()
           }
         }
       }
@@ -64,9 +65,9 @@ const CardsContainer = () => {
 
 
   return (
-    <div className={"CardsContainer"} onClick={clickHandler}>
-      <CardsList/>
-    </div>
+      <div className={"CardsContainer"} onClick={clickHandler}>
+        <CardsList/>
+      </div>
   );
 };
 
