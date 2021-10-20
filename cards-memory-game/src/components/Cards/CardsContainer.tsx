@@ -49,6 +49,8 @@ const CardsContainer = () => {
     openCards.current[1].classList.add('correct');
     openCards.current = [];
     disableRef.current = false;
+    let audioObj = new Audio(`assets/audio/correct.mp3`);
+    audioObj.play()
   }
 
   function wrongHandler() {
@@ -61,6 +63,8 @@ const CardsContainer = () => {
       openCards.current[1].classList.remove('wrong');
       openCards.current = [];
       disableRef.current = false;
+      let audioObj = new Audio(`assets/audio/error.mp3`);
+      audioObj.play()
     }, 1100);
   }
 
