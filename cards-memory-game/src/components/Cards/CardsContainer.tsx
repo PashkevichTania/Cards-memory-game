@@ -17,14 +17,15 @@ const CardsContainer = () => {
   }, []);
 
 
-  const clickHandler = (event: any) => {
+  const clickHandler = (event: React.MouseEvent<HTMLElement>) => {
     if (disableRef.current) {
       return
     }
-    if (event.target.classList.contains('cardImage')) {
-      const card = event.target.offsetParent.offsetParent
-      if (!card.classList.contains('active')) {
-        card.classList.add('active')
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('cardImage')) {
+      const card = target.closest('.Card') as HTMLElement;
+      if (!(card!.classList.contains('active'))) {
+        card!.classList.add('active')
         openCards.current.push(card)
         if (openCards.current.length === 2) {
           disableRef.current = true;
