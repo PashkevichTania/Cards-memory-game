@@ -1,4 +1,4 @@
-import React, {memo, useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import CardsList from "components/Cards/CardsList";
 import {useDispatch} from "react-redux";
 import {finishGame} from "redux/appSlice";
@@ -72,4 +72,4 @@ const CardsContainer = () => {
   );
 };
 
-export default memo(CardsContainer);
+export default CardsContainer;

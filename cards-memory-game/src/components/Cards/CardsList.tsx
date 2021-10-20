@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {CARDS_IMAGES} from "const";
 import Card from "components/Cards/Card";
+
 
 const CardsList = () => {
 
@@ -15,13 +16,13 @@ const CardsList = () => {
   const cardsArray = shuffle(CARDS_IMAGES.concat(CARDS_IMAGES));
 
   const cardsList = cardsArray.map((cardImage) =>
-    <Card cardImage={cardImage} key={cardImage + Math.random()}/>)
+      <Card cardImage={cardImage} key={cardImage + Math.random()}/>)
 
   return (
-    <div className={"CardsList"}>
-      {cardsList}
-    </div>
+      <div className={"CardsList"}>
+        {cardsList}
+      </div>
   );
 };
 
-export default CardsList;
+export default memo(CardsList);
