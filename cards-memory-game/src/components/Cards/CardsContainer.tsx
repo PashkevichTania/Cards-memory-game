@@ -22,21 +22,17 @@ const CardsContainer = () => {
       return
     }
     const target = event.target as HTMLElement;
-    if (target.classList.contains('cardImage')) {
+    if (target.classList.contains('cardImage') && !target.classList.contains('active')) {
       const card = target.closest('.Card') as HTMLElement;
-      if (!(card!.classList.contains('active'))) {
-        card!.classList.add('active')
-        openCards.current.push(card)
-        if (openCards.current.length === 2) {
-          disableRef.current = true;
-          if (openCards.current[0].dataset.img == openCards.current[1].dataset.img) {
-            correctHandler()
-            if (correct.current === 8) {
-              dispatch(finishGame())
-            }
-          } else {
-            wrongHandler()
-          }
+      card!.classList.add('active');
+      openCards.current.push(card);
+      if (openCards.current.length === 2) {
+        disableRef.current = true;
+        if (openCards.current[0].dataset.img == openCards.current[1].dataset.img) {
+          correctHandler();
+          (correct.current === 8)? dispatch(finishGame()): null;
+        } else {
+          wrongHandler()
         }
       }
     }
