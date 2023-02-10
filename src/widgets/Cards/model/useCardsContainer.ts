@@ -12,7 +12,19 @@ export const useCardsContainer = (): {
   const timerRef = useRef<number>()
   const disableRef = useRef<boolean>(false)
 
-  useEffect(() => () => clearTimeout(timerRef.current), [])
+  const audioObjError = new Audio('/audio/error.mp3')
+  const audioObjCorrect = new Audio('/audio/correct.mp3')
+  audioObjCorrect.volume = 0.2
+  audioObjError.volume = 0.2
+
+  useEffect(
+    () => () => {
+      clearTimeout(timerRef.current)
+      audioObjError.remove()
+      audioObjCorrect.remove()
+    },
+    []
+  )
 
   const clickHandler = (event: React.MouseEvent<HTMLElement>) => {
     if (disableRef.current) {
@@ -43,8 +55,7 @@ export const useCardsContainer = (): {
     openCards.current[1].classList.add(styles.correct)
     openCards.current = []
     disableRef.current = false
-    const audioObj = new Audio('/audio/correct.mp3')
-    audioObj.play()
+    audioObjCorrect.play()
   }
 
   function wrongHandler() {
@@ -57,8 +68,7 @@ export const useCardsContainer = (): {
       openCards.current[1].classList.remove(styles.wrong)
       openCards.current = []
       disableRef.current = false
-      const audioObj = new Audio('/audio/error.mp3')
-      audioObj.play()
+      audioObjError.play()
     }, 1100)
   }
 
