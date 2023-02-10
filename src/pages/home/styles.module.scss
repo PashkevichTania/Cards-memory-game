@@ -1,10 +1,9 @@
 .Home {
   min-height: 100vh;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
 
-
-  .startBtn{
+  .startBtn {
     z-index: 1;
     outline: none;
     border: none;
@@ -20,20 +19,22 @@
     line-height: 25px;
 
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.75);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid
+      rgba(255, 255, 255, 0.75);
+    border-bottom: 1px solid
+      rgba(255, 255, 255, 0.75);
 
     backdrop-filter: blur(3px);
 
     text-transform: capitalize;
-    color: #FEFEFE;
-    &:hover{
-      color: #FEFEFE;
+    color: #fefefe;
+    &:hover {
+      color: #fefefe;
       background: rgba(0, 255, 185, 0.15);
     }
-    &:active{
-      color: #FEFEFE;
+    &:active {
+      color: #fefefe;
       background: rgba(0, 255, 185, 0.2);
     }
   }

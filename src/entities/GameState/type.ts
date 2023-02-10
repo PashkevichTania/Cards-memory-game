@@ -1,4 +1,4 @@
 export type GameState = {
-  isGameStarted: boolean,
-  isGameFinished: boolean,
+  isGameStarted: boolean
+  isGameFinished: boolean
 }

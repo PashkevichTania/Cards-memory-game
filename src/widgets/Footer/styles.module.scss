@@ -2,7 +2,7 @@
   height: 100px;
   width: 100%;
   box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
-  background-color: rgba(18,222,229,.15);
+  background-color: rgba(18, 222, 229, 0.15);
   backdrop-filter: blur(9px);
   display: flex;
   flex-direction: row;
@@ -10,11 +10,11 @@
   justify-content: space-around;
   color: white;
 
-  margin-top:auto;
+  margin-top: auto;
 
-  a{
+  a {
     color: white;
-    &:visited{
+    &:visited {
       color: white;
     }
   }

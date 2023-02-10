@@ -6,7 +6,10 @@ import styles from './styles.module.scss'
 const CardsContainer = () => {
   const { clickHandler } = useCardsContainer()
   return (
-    <div className={styles.cardsContainer} onClick={clickHandler}>
+    <div
+      className={styles.cardsContainer}
+      onClick={clickHandler}
+    >
       <CardsList />
     </div>
   )
