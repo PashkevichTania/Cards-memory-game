@@ -1,7 +1,4 @@
-import {
-  toast,
-  ToastContent
-} from 'react-toastify'
+import { toast, ToastContent } from 'react-toastify'
 
 export const notify = (content: ToastContent) =>
   toast(content, {

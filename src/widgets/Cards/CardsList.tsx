@@ -5,23 +5,12 @@ import Card from './Card'
 import styles from './styles.module.scss'
 
 const CardsList = () => {
-  const cardsArray = shuffle(
-    CARDS_IMAGES.concat(CARDS_IMAGES)
-  )
-  const cardsList = cardsArray.map(
-    (cardImage) => (
-      <Card
-        cardImage={cardImage}
-        key={cardImage + Math.random()}
-      />
-    )
-  )
+  const cardsArray = shuffle(CARDS_IMAGES.concat(CARDS_IMAGES))
+  const cardsList = cardsArray.map((cardImage) => (
+    <Card cardImage={cardImage} key={cardImage + Math.random()} />
+  ))
 
-  return (
-    <div className={styles.cardsList}>
-      {cardsList}
-    </div>
-  )
+  return <div className={styles.cardsList}>{cardsList}</div>
 }
 
 export default memo(CardsList)

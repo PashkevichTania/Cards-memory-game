@@ -6,13 +6,11 @@ type Store = {
   reset: VoidFunction
 }
 
-export const useTimerStore = create<Store>(
-  (set) => ({
-    time: '',
-    setTime: (newTime) => set({ time: newTime }),
-    reset: () => set({ time: '' })
-  })
-)
+export const useTimerStore = create<Store>((set) => ({
+  time: '',
+  setTime: (newTime) => set({ time: newTime }),
+  reset: () => set({ time: '' })
+}))
 
 export const selectors = {
   time: (state: Store) => state.time,

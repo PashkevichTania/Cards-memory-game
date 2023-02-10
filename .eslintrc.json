@@ -1,0 +1,55 @@
+{
+  // https://andrebnassis.medium.com/setting-eslint-on-a-react-typescript-project-2021-1190a43ffba
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "@feature-sliced/eslint-config/rules/import-order",
+    "@feature-sliced/eslint-config/rules/public-api",
+    "@feature-sliced/eslint-config/rules/layers-slices"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "import"],
+  "rules": {
+    "semi": ["error", "never"],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "no-nonoctal-decimal-escape": "off",
+    "no-unsafe-optional-chaining": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "react/jsx-props-no-spreading": ["off"],
+    "import/no-anonymous-default-export": ["off"],
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "linebreak-style": "off",
+    "no-debugger": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js", "**/*.ts", "**/*.tsx"]
+    }
+  ],
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
+  }
+}

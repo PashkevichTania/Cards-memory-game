@@ -1,6 +1,6 @@
-import { GameState } from 'entities/GameState/type'
 import { create } from 'zustand'
 import { immer } from 'zustand/middleware/immer'
+import { GameState } from 'entities/GameState/type'
 
 type Store = {
   gameState: GameState

@@ -6,14 +6,11 @@ type Store = {
   reset: VoidFunction
 }
 
-export const useScoreStore = create<Store>(
-  (set) => ({
-    score: 0,
-    setScore: (newScore) =>
-      set({ score: newScore }),
-    reset: () => set({ score: 0 })
-  })
-)
+export const useScoreStore = create<Store>((set) => ({
+  score: 0,
+  setScore: (newScore) => set({ score: newScore }),
+  reset: () => set({ score: 0 })
+}))
 
 export const selectors = {
   score: (state: Store) => state.score,
